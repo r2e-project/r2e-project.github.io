@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="LiveCodeBench: Holistic and Contamination-Free Evaluation of Large
+      Language Models for Code" />
+  <meta name="keywords" content="LiveCodeBench, Code, Large Language Models, LLM, Code LLM, Evaluation, Benchmark" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    R2E: Turning any GitHub Repository into a Programming Agent Environment
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+
+      gtag("js", new Date())
+
+      gtag("config", "G-PYVRSFMDRL")
+    </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/bulma.min.css" />
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="icon" href="./images/favicon.svg" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="dnerf">R2E</span>: Turning any <span class="dnerf">GitHub</span> Repository into a
+              Programming Agent Environment
+            </h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://naman-ntc.github.io/">Naman Jain</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://manishs.org">Manish Shetty</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://tianjunz.github.io">Tianjun Zhang</a>,</span>
+              <span class="author-block">
+                <a href="https://kinghan.info/">King Han</a>,</span>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~ksen/">Koushik Sen</a>,</span>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a></span>
+            </div>
+
+
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">UC Berkeley</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+
+              <span class="author-block">
+                <sup>*</sup>Equal Contribution
+              </span>
+            </div>
+            <br />
+            <br />
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper (Coming Soon!)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/r2e-project/r2e"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (Coming Soon!)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <!-- center the image -->
+          <img src="./images/r2e-framework.drawio.png" alt="Teaser" class="teaser-image center" width="90%" />
+        </div>
+
+        <h2 class="subtitle has-text-centered">
+          Code execution plays a central role in real-world programming for humans and agents alike.
+          However, current LLMs are trained and evaluated staticly without providing LLMs with the
+          ability to execute code.
+          We present <span class="dnerf">R2E</span>, a framework that turns any <span class="dnerf">GitHub</span>
+          repository into an environment for a programming agent.
+          These environments can be used for benchmarking and even training dynamic programming agents that can interact
+          with
+          interpreters on real-world codebases.
+        </h2>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              LiveCodeBench is a holistic and contamination-free evaluation benchmark
+              of LLMs for code that continuously collects new problems over time.
+              Particularly, LiveCodeBench also focuses on broader code-related capabilities,
+              such as self-repair, code execution, and test output prediction,
+              beyond mere code generation. Currently, LiveCodeBench hosts over
+              three hundred high-quality coding problems published between May
+              2023 and February 2024. We evaluate 29 LLMs on LiveCodeBench
+              scenarios and present novel empirical findings not revealed in
+              prior benchmarks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Enabling Execution for Arbitrary Repositories</h2>
+          <div class="content has-text-justified">
+            <p>
+              <span class="dnerf">R2E</span> is a framework that turns any <span class="dnerf">GitHub</span> repository
+              into
+              a programming agent environment.
+              This is achieved by a novel equivalence test generation technique powered by a synergistic combination of
+              program analysis and <span class="dnerf">LLMs</span>.
+              These environments can be used for benchmarking static LLMs and dynamic programming agents that can
+              interact
+              with interpreter on real-world (potentially unseen) codebases.
+              Furthermore, <span class="dnerf">R2E</span> environments can also be used for improving <span
+                class="dnerf">LLMs</span>
+              themselves by fine-tuning models with execution information from such real-world codebases.
+              We solve multiple challenges to scalably solve this problem including high-quality test harness synthesis
+              and efficient docker containerization.
+              Particularly, installing and running over 500 repositories requires considerable memory and CPU resources.
+              Using <a href="pdm-project.org">PDM</a>, a python dependency manager, we share common packages across
+              repositories, making the memory footprint almost sublinear in the number of repositories and providing a
+              multi-fold memory reduction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Equivalence Test Harnesses To the Rescue</h2>
+          <div class="content has-text-justified">
+            {describe test gen in the way paper does}
+            <img src="./images/r2e-example.drawio.png" alt="Test Generation" class="teaser-image center" width="100%"
+              height="90%" />
+            {breifly results and maybe table}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Potential Overfitting in HumanEval</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/lcb_vs_he.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            {code generation}
+            {figures}
+            {repair results}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{
+      jain2024r2e,
+      title={R2E: Turning any Github Repository into a Programming Agent Test Environment},
+      author={Naman Jain and Manish Shetty and Tianjun Zhang and King Han and Koushik Sen and Ion Stoica},
+      booktitle={ICLR 2024 Workshop on Large Language Model (LLM) Agents},
+      year={2024},
+      url={https://openreview.net/forum?id=xsytkViOsd}
+},
+    </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Please reach out to <a href="mailto:naman_jain@berkeley.edu">naman_jain@berkeley.edu</a> or <a
+                href="mailto:manishs@berkeley.edu"> for any questions or feedback on R2E.
+                We are looking forward to collaborations pertaining this work.
+            </p>
+            <p>
+              The source code from this website is borrowed from <a
+                href="https://github.com/nerfies/nerfies.github.io">this template</a>!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

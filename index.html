@@ -137,7 +137,7 @@
       <div class="hero-body">
         <div class="columns is-centered">
           <!-- center the image -->
-          <img src="./images/overview.png" alt="Teaser" class="teaser-image center" width="90%" />
+          <img src="./images/overview.png" alt="Teaser" class="teaser-image center" width="85%" />
         </div>
 
         <h2 class="subtitle has-text-justified">
@@ -279,35 +279,36 @@
   </section>
 
 
-  <section class="teaser" style="padding-bottom:4%">
+  <section class="video-teaser" style="padding-bottom:4%">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <h3 class="title has-text-centered">Beyond Code Generation with Environments</h3>
           <span class="dnerf">R2E</span> environments enable applications beyond code generation.
           Powered by <b>equivalence tests</b>, R2E can inherently verify program transformations
-          such as code optimizations, refactoring, and transpilation.
-          Here, we demonstrate how <span class="dnerf">R2E</span> environments can be used to optimize code in
-          real-world:
-          <div class="video-container">
+          such as code optimizations, refactoring, and transpilation. These tests simply check if the
+          transformed version of code is equivalent to the original code under a set of automatically generated
+          high-coverage test cases. Below we demonstrate how <span class="dnerf">R2E</span> environments can be used to
+          optimize code in real-world:
+
+          <div class="video-container" style="padding-top:1em;">
             <iframe width="700" height="395"
               src="https://www.youtube.com/embed/NrTEbwyofAg?si=cdQhFovqMAPnS8ya&autoplay=1&mute=1&loop=1&rel=0"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          Here, we show a demo of how a programming agent optimizes code in an arbitrary Python repository
-          (<code>PythonRobotics</code>).
+          Here, we show an demo of how a programming agent optimizes code in an arbitrary Python repository
+          (<a href="https://github.com/AtsushiSakai/PythonRobotics">PythonRobotics</a>).
           R2E enables this by first building an environment for the repository and generating <b>equivalence tests</b>
           that verifies if the agent's code changes are correct. The agent then interacts with the environment to
-          optimize the code.
+          optimize the code by 1.8x 🚀!
         </div>
       </div>
     </div>
   </section>
 
-
-  <section class="teaser" style="padding-bottom:4%">
+  <section class="video-teaser">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-four-fifths">
@@ -321,8 +322,9 @@
           In an a more complex example, we show an agent optimizing a method from <b>R2E's own repository</b>!!
           <i>In fact, this was an optimization opportunity suggested in our code review!</i>
           Again, R2E scales to arbitrary repositories and generates <b>high coverage</b> equivalence tests for functions
-          and methods. Failing equivalence tests provide feedback for the agent to attempt multiple rounds
-          to reach the optimal solution with a speedup of 239x 🚀!
+          and methods. R2E additionally simplifies execution of generated or edited code from LLMs in a repository setting.
+          Failing equivalence tests provide feedback for the agent to attempt multiple rounds
+          to reach the optimal solution with a whopping speedup of 239x 🚀!
         </div>
       </div>
     </div>
@@ -336,14 +338,13 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@inproceedings{
-      jain2024r2e,
-      title={R2E: Turning any Github Repository into a Programming Agent Test Environment},
-      author={Naman Jain and Manish Shetty and Tianjun Zhang and King Han and Koushik Sen and Ion Stoica},
-      booktitle={},
-      year={2024},
-      url={https://openreview.net/forum?id=xsytkViOsd}
-},
-    </code></pre>
+    jain2024r2e,
+    title={R2E: Turning any Github Repository into a Programming Agent Test Environment},
+    author={Naman Jain and Manish Shetty and Tianjun Zhang and King Han and Koushik Sen and Ion Stoica},
+    booktitle={},
+    year={2024},
+    url={https://openreview.net/forum?id=xsytkViOsd}
+}</code></pre>
     </div>
   </section>
 

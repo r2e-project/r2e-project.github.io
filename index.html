@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="LiveCodeBench: Holistic and Contamination-Free Evaluation of Large
-      Language Models for Code" />
-  <meta name="keywords" content="LiveCodeBench, Code, Large Language Models, LLM, Code LLM, Evaluation, Benchmark" />
+  <meta name="description" content="R2E: Turning any GitHub Repository into a Programming Agent Environment
+  " />
+  <meta name="keywords"
+    content="R2E, Large Language Models, LLM, Code LLM, Evaluation, Benchmark, LLM Agents, Repo Coding, Repository, SWE" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
     R2E: Turning any GitHub Repository into a Programming Agent Environment
@@ -178,12 +179,38 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Equivalence Test Harnesses To the Rescue</h2>
+          <h2 class="title is-3">Test Harness Generation: The key to environments </h2>
           <div class="content has-text-justified">
-            {describe test gen in the way paper does}
-            <img src="./images/example.png" alt="Test Generation" class="teaser-image center" width="100%"
-              height="90%" />
-            {breifly results and maybe table}
+            <span class="dnerf">R2E</span> framework generates test harnesses for any GitHub repository by leveraging
+            the following key design principles
+            <ul>
+              <li>
+                <b>Equivalence Tests, not Output Prediction.</b> R2E decouples input generation from output
+                prediction by generating equivalence tests that use the <i>ground truth</i> function implementation to
+                generate test cases - a much simpler task than predicting the output of a function.
+              </li>
+              <li>
+                <b>Harnesses, not I/O Pairs.</b> R2E generates test harnesses that contain the test cases along with a
+                setup which prepares additional information like database connections, external files, configurations,
+                etc. This is a deparature from I/O examples with primitive types in traditional benchmarks.
+              </li>
+              <li>
+                <b>Sliced Context, not Entire Repositories.</b> R2E uses a novel dependecy slicing based prompt
+                construction approach which provides the minimal repository context requires to <i>understand</i> the
+                function implementation. Emperically, we find it to be both cheaper and more effective than using the
+                entire repository context.
+              </li>
+              <li>
+                <b>Execution and Coverage for Quality.</b> We execute the generated test harnesses filtering the tests
+                that don't pass under the self-equivalence setting. Additionally, we evaluate the quality of the
+                generated tests using branch coverage.
+              </li>
+              <br />
+              <img src="./images/example.png" alt="Test Generation" class="teaser-image center" width="100%"
+                height="90%" />
+
+              {breifly results and maybe table}
+
           </div>
         </div>
       </div>
@@ -197,10 +224,16 @@
           <h2 class="title is-3">Code Generation</h2>
           <div class="content has-text-justified">
             <div class="columns is-centered">
-              <img src="./images/lcb_vs_he.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
-                height="80%" />
+              <img src="./images/model_perfs.png" alt="Pass@1 on R2E-Eval1" class="teaser-image center" width="47%"
+                height="47%" />
+              <img src="./images/repair_rate.png" alt="Repair Rate on R2E-Eval1" class="teaser-image center" width="47%"
+                height="47%" />
             </div>
-            {code generation}
+            R2E environments to evaluate code generation systems. Particularly, we can evaluate both single round
+            "static" code generation from LLMs and multi-round programming agents. We construct R2E-Eval1, a
+            large scale benchmark spanning 137 repositories that can be used to evaluate code generation systems.
+            The figure on the left compares single round performance of current LLMs and the figure on the right depicts
+            performance of self-repair agents over multiple rounds.
             {figures}
             {repair results}
 

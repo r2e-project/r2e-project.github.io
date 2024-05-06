@@ -156,3 +156,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Adjust this value as needed */
+}

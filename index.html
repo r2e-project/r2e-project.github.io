@@ -128,47 +128,25 @@
       <div class="hero-body">
         <div class="columns is-centered">
           <!-- center the image -->
-          <img src="./images/r2e-framework.drawio.png" alt="Teaser" class="teaser-image center" width="90%" />
+          <img src="./images/r2e-framework.png" alt="Teaser" class="teaser-image center" width="90%" />
         </div>
 
         <h2 class="subtitle has-text-centered">
-          Code execution plays a central role in real-world programming for humans and agents alike.
-          However, current LLMs are trained and evaluated staticly without providing LLMs with the
-          ability to execute code.
-          We present <span class="dnerf">R2E</span>, a framework that turns any <span class="dnerf">GitHub</span>
+          Code execution is central to programming for humans and agents alike.
+          However, current LLMs are trained and evaluated staticly without providing LLMs with the ability to interact
+          with developer environment that allows code execution.
+          We present <span class="dnerf">R2E</span>, a scalable framework that turns any <span
+            class="dnerf">GitHub</span>
           repository into an environment for a programming agent.
-          These environments can be used for benchmarking and even training dynamic programming agents that can interact
-          with
-          interpreters on real-world codebases.
+          These environments can be used for benchmarking programming agents that can interact with interpreter on
+          entire codebases and would also enable training LLMs with large-scale execution information from
+          real-world repositories.
         </h2>
 
       </div>
     </div>
   </section>
 
-
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Introduction</h2>
-          <div class="content has-text-justified">
-            <p>
-              LiveCodeBench is a holistic and contamination-free evaluation benchmark
-              of LLMs for code that continuously collects new problems over time.
-              Particularly, LiveCodeBench also focuses on broader code-related capabilities,
-              such as self-repair, code execution, and test output prediction,
-              beyond mere code generation. Currently, LiveCodeBench hosts over
-              three hundred high-quality coding problems published between May
-              2023 and February 2024. We evaluate 29 LLMs on LiveCodeBench
-              scenarios and present novel empirical findings not revealed in
-              prior benchmarks.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -187,13 +165,8 @@
               with interpreter on real-world (potentially unseen) codebases.
               Furthermore, <span class="dnerf">R2E</span> environments can also be used for improving <span
                 class="dnerf">LLMs</span>
-              themselves by fine-tuning models with execution information from such real-world codebases.
-              We solve multiple challenges to scalably solve this problem including high-quality test harness synthesis
-              and efficient docker containerization.
-              Particularly, installing and running over 500 repositories requires considerable memory and CPU resources.
-              Using <a href="pdm-project.org">PDM</a>, a python dependency manager, we share common packages across
-              repositories, making the memory footprint almost sublinear in the number of repositories and providing a
-              multi-fold memory reduction.
+              themselves by fine-tuning models with execution traces on such real-world codebases.
+
             </p>
           </div>
         </div>
@@ -208,7 +181,7 @@
           <h2 class="title is-3">Equivalence Test Harnesses To the Rescue</h2>
           <div class="content has-text-justified">
             {describe test gen in the way paper does}
-            <img src="./images/r2e-example.drawio.png" alt="Test Generation" class="teaser-image center" width="100%"
+            <img src="./images/r2e-example.png" alt="Test Generation" class="teaser-image center" width="100%"
               height="90%" />
             {breifly results and maybe table}
           </div>
@@ -221,7 +194,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Potential Overfitting in HumanEval</h2>
+          <h2 class="title is-3">Code Generation</h2>
           <div class="content has-text-justified">
             <div class="columns is-centered">
               <img src="./images/lcb_vs_he.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
@@ -248,7 +221,7 @@
       jain2024r2e,
       title={R2E: Turning any Github Repository into a Programming Agent Test Environment},
       author={Naman Jain and Manish Shetty and Tianjun Zhang and King Han and Koushik Sen and Ion Stoica},
-      booktitle={ICLR 2024 Workshop on Large Language Model (LLM) Agents},
+      booktitle={},
       year={2024},
       url={https://openreview.net/forum?id=xsytkViOsd}
 },
@@ -265,7 +238,7 @@
             <p>
               Please reach out to <a href="mailto:naman_jain@berkeley.edu">naman_jain@berkeley.edu</a> or <a
                 href="mailto:manishs@berkeley.edu"> for any questions or feedback on R2E.
-                We are looking forward to collaborations pertaining this work.
+                We would be happy to hear from you and collborate on this!
             </p>
             <p>
               The source code from this website is borrowed from <a

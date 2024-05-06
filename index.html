@@ -246,18 +246,21 @@
           <h2 class="title is-3">Code Generation</h2>
           <div class="content has-text-justified">
             <div class="columns is-centered">
+              R2E environments to evaluate code generation systems. Particularly, we can evaluate both single round
+              "static" code generation from LLMs and multi-round programming agents. We construct R2E-Eval1, a
+              large scale benchmark spanning 137 repositories that can be used to evaluate code generation systems.
+              The figure on the left compares single round performance of current LLMs and the figure on the right
+              depicts
+              performance of self-repair agents over multiple rounds.
               <img src="./images/model_perfs.png" alt="Pass@1 on R2E-Eval1" class="teaser-image center" width="47%"
                 height="47%" />
               <img src="./images/repair_rate.png" alt="Repair Rate on R2E-Eval1" class="teaser-image center" width="47%"
                 height="47%" />
             </div>
-            R2E environments to evaluate code generation systems. Particularly, we can evaluate both single round
-            "static" code generation from LLMs and multi-round programming agents. We construct R2E-Eval1, a
-            large scale benchmark spanning 137 repositories that can be used to evaluate code generation systems.
-            The figure on the left compares single round performance of current LLMs and the figure on the right depicts
-            performance of self-repair agents over multiple rounds.
-            {figures}
-            {repair results}
+            As we see, model performances on R2E-Eval1 are considerably lower than traditional benchmarks like HumanEval
+            highlighting the challenges of real-world codebases. Next, we find that self-repair agents can significantly
+            improve the performance of LLMs using oracle mistake feedback and compiler interactions over multiple turns.
+            GPT-4 can fix more than 30% of the mistakes after 3 turns!
 
           </div>
         </div>

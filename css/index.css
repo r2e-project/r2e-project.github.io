@@ -193,3 +193,14 @@ tfoot td {
   background-color: #f2f2f2;
   font-weight: bold;
 }
+
+.desktop-logo {
+  height: 160px;
+  margin-right: -10%;
+}
+
+@media screen and (max-width: 1024px) {
+  .desktop-logo {
+    display: none;
+  }
+}

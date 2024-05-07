@@ -141,9 +141,11 @@
         </div>
 
         <h2 class="subtitle has-text-justified">
-          Code execution is central to programming for humans and agents alike.
-          However, current LLMs are trained and evaluated staticly without enabling LLMs to interact
-          with developer environments that allows code execution.
+          Current code generation systems are evaluated on static benchmarks like <span class="dnerf">HumanEval</span>
+          which comprise of isolated code snippets lacking real-world aspect of programming like dealing with large
+          codebases, dependencies, and execution environments.
+          While GitHub repositories provide a rich source of real-world codebases, evaluating code generation systems on
+          them is challenging due to the lack of test harnesses associated with the code.
           We present <span class="dnerf"><b>R2E</b></span>, a scalable framework that turns any <span
             class="dnerf">GitHub</span>
           repository into an environment for programming agents.
@@ -243,7 +245,7 @@
             We evaluate the quality of the generated test harnesses by comparing the validity and coverage of the
             generated tests. Following table compares the quality of the generated tests for a simple output prediction
             setting against our equivalence test generation setting. As we see, the equivalence tests achieve better
-            validty due to the decoupling of input generation from output prediction. We study different context
+            validity due to the decoupling of input generation from output prediction. We study different context
             creation approaches and find that sliced context is the most effective (see paper for details).
 
             <table>
